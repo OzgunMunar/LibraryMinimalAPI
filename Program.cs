@@ -1,11 +1,27 @@
+using System.IO.Compression;
 using System.Text;
 using LibraryMinimalAPI.Context;
 using LibraryMinimalAPI.Endpoints;
 using LibraryMinimalAPI.Service;
+using Microsoft.AspNetCore.ResponseCompression;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddResponseCompression(options => {
+
+    options.EnableForHttps = true;
+    options.Providers.Clear();
+    options.Providers.Add<BrotliCompressionProvider>();
+    
+});
+
+builder.Services.Configure<BrotliCompressionProviderOptions>(options => {
+
+    options.Level = CompressionLevel.Optimal;
+
+});
 
 // adding extra json file.
 builder.Configuration.AddJsonFile("appsettings.Local.json", true, true);
@@ -44,6 +60,8 @@ var app = builder.Build();
 
 app.UseSwagger();
 app.UseSwaggerUI();
+
+app.UseResponseCompression();
 
 app.UseBookEndpoints();
 
