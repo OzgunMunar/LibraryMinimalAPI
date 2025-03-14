@@ -41,3 +41,4 @@
 /Users/Ozgun/Desktop/Dotnet Projects/LibraryMinimalAPI/obj/Debug/net10.0/LibraryMinimalAPI.pdb
 /Users/Ozgun/Desktop/Dotnet Projects/LibraryMinimalAPI/obj/Debug/net10.0/LibraryMinimalAPI.genruntimeconfig.cache
 /Users/Ozgun/Desktop/Dotnet Projects/LibraryMinimalAPI/obj/Debug/net10.0/ref/LibraryMinimalAPI.dll
+/Users/Ozgun/Desktop/Dotnet Projects/LibraryMinimalAPI/obj/Debug/net10.0/LibraryMinimalAPI.sourcelink.json
